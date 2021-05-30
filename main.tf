@@ -52,5 +52,5 @@ module "s3_example" {
     source = "terraform-aws-modules/s3-bucket/aws"
     version = "2.2.0"
 
-    bucket_name = locals.bucket_name
+    bucket = locals.bucket_name
 }
