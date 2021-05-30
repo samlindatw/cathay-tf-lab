@@ -45,12 +45,12 @@ locals {
 }
 
 resource "random_id" "this" {
-  length = 2
+  byte_length = 2
 }
 
 module "s3_example" {
     source = "terraform-aws-modules/s3-bucket/aws"
     version = "2.2.0"
 
-    bucket = locals.bucket_name
+    bucket = local.bucket_name
 }
