@@ -45,7 +45,7 @@ locals {
 }
 
 resource "random_pet" "this" {
-  byte_length = 8
+  length = 4
 }
 
 module "s3_example" {
