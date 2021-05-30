@@ -11,9 +11,11 @@ provider "aws" {
 # }
 
 module "ec2_with_mandatory_tagging" {
-    source = "github.com/samlindatw/cathay-tf-lab"
-    Name = "CBL2-Server"
-    user_id = "samlinda"
+    source = "github.com/cloudtp/hello-terraform-module"
+
+    # module variables
+    Name = "${terraform.workspace}-sky-server"
+    user_id = "SkyHuang"
     EndDate = "next-week"
 
  // Lab Task: Read the module code at https://github.com/samlindatw/hello-terraform-module
