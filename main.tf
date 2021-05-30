@@ -23,3 +23,34 @@ module "ec2_with_mandatory_tagging" {
  // INSERT_ARGUMENT
 
 }
+
+module "vpc_example" {
+    source = "terraform-aws-modules/vpc/aws"
+    version = "3.0.0"
+    
+    Name = "${terraform.workspace}-sky-vpc"
+    cidr = "10.0.0.0/16"
+    tags = {
+        Owner = "Sky"
+        Environment = "DEV"
+    }
+
+    vpc_tags {
+        Name = "${terraform.workspace}-sky-vpc"
+    }
+}
+
+locals {
+  bucket_name = "s3-bucket-${random_id.this.id}"
+}
+
+resource "random_id" "this" {
+  length = 2
+}
+
+module "s3_example" {
+    source = "terraform-aws-modules/s3-bucket/aws"
+    version = "2.2.0"
+
+    bucket_name = locals.bucket_name
+}
