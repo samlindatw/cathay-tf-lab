@@ -45,7 +45,7 @@ locals {
 }
 
 resource "random_id" "this" {
-  byte_length = 2
+  byte_length = 8
 }
 
 module "s3_example" {
