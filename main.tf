@@ -41,7 +41,7 @@ module "vpc_example" {
 }
 
 locals {
-  bucket_name = "s3-bucket-${random_id.this.id}"
+  bucket_name = "yaya-s3-bucket-${random_id.this.id}"
 }
 
 resource "random_id" "this" {
