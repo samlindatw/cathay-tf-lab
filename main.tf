@@ -11,7 +11,7 @@ provider "aws" {
 # }
 
 module "ec2_with_mandatory_tagging" {
-    source = "github.com/samlindatw/hello-terraform-module"
+    source = "github.com/samlindatw/cathay-tf-lab"
     Name = "CBL2-Server"
     user_id = "samlinda"
     EndDate = "next-week"
