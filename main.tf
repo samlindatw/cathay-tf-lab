@@ -28,14 +28,14 @@ module "vpc_example" {
     source = "terraform-aws-modules/vpc/aws"
     version = "3.0.0"
     
-    Name = "${terraform.workspace}-sky-vpc"
+    name = "${terraform.workspace}-sky-vpc"
     cidr = "10.0.0.0/16"
     tags = {
         Owner = "Sky"
         Environment = "DEV"
     }
 
-    vpc_tags {
+    vpc_tags = {
         Name = "${terraform.workspace}-sky-vpc"
     }
 }
